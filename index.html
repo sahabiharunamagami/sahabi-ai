@@ -1,11 +1,72 @@
 <!DOCTYPE html>
-<html>
+<html lang="ha">
 <head>
-    <title>Sahabi AI</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sahabi AI</title>
+
+<style>
+body{
+background:#111;
+color:white;
+font-family:Arial;
+margin:0;
+padding:20px;
+}
+
+h1{
+text-align:center;
+color:#00ff88;
+}
+
+#chat{
+height:350px;
+border:1px solid #444;
+padding:10px;
+overflow:auto;
+background:#222;
+margin-bottom:10px;
+}
+
+input{
+width:75%;
+padding:12px;
+font-size:16px;
+}
+
+button{
+padding:12px;
+background:#00aa55;
+color:white;
+border:none;
+}
+</style>
 </head>
+
 <body>
-    <h1>Sahabi AI</h1>
-    <p>Barka da zuwa Sahabi AI.</p>
-    <p>Wannan shi ne farkon AI mai magana da Hausa.</p>
+
+<h1>🤖 Sahabi AI</h1>
+
+<div id="chat">
+<p><b>Sahabi AI:</b> Sannu! Yaya zan taimake ka?</p>
+</div>
+
+<input id="userInput" placeholder="Rubuta saƙonka...">
+<button onclick="reply()">Send</button>
+
+<script>
+function reply(){
+let input=document.getElementById("userInput").value;
+let chat=document.getElementById("chat");
+
+chat.innerHTML += "<p><b>Kai:</b> "+input+"</p>";
+
+chat.innerHTML += "<p><b>Sahabi AI:</b> Na karɓi saƙonka: "+input+"</p>";
+
+document.getElementById("userInput").value="";
+chat.scrollTop=chat.scrollHeight;
+}
+</script>
+
 </body>
 </html>
