@@ -74,3 +74,31 @@ border-radius:8px;
   <input type="text" id="userInput" placeholder="Rubuta tambayarka...">
   <button onclick="sendMessage()">Send</button>
 </div>
+<script>
+function sendMessage() {
+  let input = document.getElementById("userInput");
+  let chat = document.getElementById("chat");
+
+  if (input.value.trim() === "") {
+    return;
+  }
+
+  let userMessage = document.createElement("div");
+  userMessage.className = "message";
+  userMessage.innerHTML = "<b>Kai:</b> " + input.value;
+
+  chat.appendChild(userMessage);
+
+  let aiMessage = document.createElement("div");
+  aiMessage.className = "message";
+  aiMessage.innerHTML = "<b>Sahabi AI:</b> Na karɓi tambayarka. Nan ba da jimawa ba zan fara ba da amsoshi masu hankali.";
+
+  chat.appendChild(aiMessage);
+
+  input.value = "";
+  chat.scrollTop = chat.scrollHeight;
+}
+</script>
+
+</body>
+</html>
